@@ -21,6 +21,11 @@ $transition: .4s ease;
     background-size: cover;
     background-attachment: fixed;   
 }
+@mixin  flexCenter {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 /*** basic styles ***/ 
 
 * {
@@ -33,7 +38,7 @@ $transition: .4s ease;
 body {
     font-family: $bodyFont;
     font-size: $fontSize;
-    color: $green;
+    color: $gray;
     padding: 10px 0 30px 0;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -66,6 +71,43 @@ a {
     }
 
 }
+.main-haddings{
+    font-size: 5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.underline{
+    background: $gray;
+    height: 8px;
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.icons{
+    display: flex;
+    list-style: none;
+    li{
+        margin-right: 30px;
+        a{
+            font-size: 2rem;
+            color: $gray;
+            &:hover{
+                color: $black;
+                transition-duration: .7s;
+            }
+        }
+    i:hover{
+        animation: punKrug 0.7s linear ;
+     }
+     @keyframes punKrug {
+         100%{
+             transform: rotate(360deg);
+         }
+         
+     }
+
+    }
+}
 
 /*** nav ***/ 
 
@@ -73,6 +115,10 @@ nav{
     padding-top: 10px;
     display: flex;
     justify-content: space-between;
+    @media(max-width: 768px){
+        flex-direction: column;
+
+    }
     .logo{
         font-family: $accentsFont;
         font-size: 3rem;
@@ -80,15 +126,27 @@ nav{
         background: $gray;
         padding: 10px 15px;
         border-radius: 10px 35px;
+        text-align: center;
  
     }
     ul{
         display: flex; 
         justify-content: space-between;
         align-items: center;
+        .active{
+            background: $gray;
+            border-radius: 25px;
+            padding: 10px 20px;
+            color: $white;
+            border: 4px solid $gray;
+
+        }
         li{
             list-style: none;
             margin-left: 50px ;
+            @media(max-width: 768px){
+                margin: 20px 5px 5px 5px;
+            }
         }
         a{
             font-size: 1.2rem;
@@ -109,4 +167,49 @@ nav{
     background-image:linear-gradient(rgba(236, 208, 72,.5),rgba(236, 208, 72,.5)),
         url(img/home-background.png);
    @include bgImg;
+   @media(max-width: 768px){
+    background-position: right;
+    background-image:linear-gradient(rgba(236, 208, 72,.8),rgba(236, 208, 72,.8)),
+        url(img/home-background.png);
 }
+   .about-home{
+       height: 80vh;
+       @include flexCenter;
+       font-size: 1.7rem;
+       width: 60%;
+       @media(max-width: 768px){
+        width: 100%;
+    }
+       
+   }
+}
+
+/*** ABOUT ***/ 
+
+#about{
+    background: $green;
+    .about-page{
+        padding-top: 100px;
+        padding-bottom: 50px;
+        p{
+            font-size: 1.4rem;
+            text-align: justify;
+            .img-left{
+                float: left;
+                width: 30%;
+                &:hover {
+                    transform: rotate(360deg);
+                }
+            }
+            .img-right{
+                float: right;
+                width: 30%;
+                &:hover {
+                    transform: rotate(-360deg);
+                }
+            }
+        }
+
+    }
+}
+

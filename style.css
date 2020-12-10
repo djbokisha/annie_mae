@@ -14,7 +14,7 @@
 body {
   font-family: "Lato", sans-serif;
   font-size: 16px;
-  color: #0d9968;
+  color: #383838;
   padding: 10px 0 30px 0;
 }
 
@@ -50,11 +50,53 @@ a:hover {
   color: #000;
 }
 
+.main-haddings {
+  font-size: 5rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.underline {
+  background: #383838;
+  height: 8px;
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.icons {
+  display: flex;
+  list-style: none;
+}
+.icons li {
+  margin-right: 30px;
+}
+.icons li a {
+  font-size: 2rem;
+  color: #383838;
+}
+.icons li a:hover {
+  color: #000;
+  transition-duration: 0.7s;
+}
+.icons li i:hover {
+  animation: punKrug 0.7s linear;
+}
+@keyframes punKrug {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /*** nav ***/
 nav {
   padding-top: 10px;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
 }
 nav .logo {
   font-family: "Arizonia", sans-serif;
@@ -63,15 +105,28 @@ nav .logo {
   background: #383838;
   padding: 10px 15px;
   border-radius: 10px 35px;
+  text-align: center;
 }
 nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+nav ul .active {
+  background: #383838;
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: #fff;
+  border: 4px solid #383838;
+}
 nav ul li {
   list-style: none;
   margin-left: 50px;
+}
+@media (max-width: 768px) {
+  nav ul li {
+    margin: 20px 5px 5px 5px;
+  }
 }
 nav ul a {
   font-size: 1.2rem;
@@ -91,6 +146,52 @@ nav ul a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+@media (max-width: 768px) {
+  #home {
+    background-position: right;
+    background-image: linear-gradient(rgba(236, 208, 72, 0.8), rgba(236, 208, 72, 0.8)), url(img/home-background.png);
+  }
+}
+#home .about-home {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.7rem;
+  width: 60%;
+}
+@media (max-width: 768px) {
+  #home .about-home {
+    width: 100%;
+  }
+}
+
+/*** ABOUT ***/
+#about {
+  background: #0d9968;
+}
+#about .about-page {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+#about .about-page p {
+  font-size: 1.4rem;
+  text-align: justify;
+}
+#about .about-page p .img-left {
+  float: left;
+  width: 30%;
+}
+#about .about-page p .img-left:hover {
+  transform: rotate(360deg);
+}
+#about .about-page p .img-right {
+  float: right;
+  width: 30%;
+}
+#about .about-page p .img-right:hover {
+  transform: rotate(-360deg);
 }
 
 /*# sourceMappingURL=style.css.map */
