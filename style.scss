@@ -15,6 +15,13 @@ $fontSize: 16px;
 $transition: .4s ease;
 
 /*** mixins ***/ 
+@mixin bgImg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;   
+}
+/*** basic styles ***/ 
 
 * {
     margin: 0;
@@ -44,6 +51,21 @@ a {
 
     }
 }
+.sing-up{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: $green;
+    color: $white;
+    padding: 20px;
+    text-align: center;
+    a{
+        color: $black;
+    }
+
+}
 
 /*** nav ***/ 
 
@@ -61,7 +83,7 @@ nav{
  
     }
     ul{
-        display: flex;
+        display: flex; 
         justify-content: space-between;
         align-items: center;
         li{
@@ -80,4 +102,11 @@ nav{
 
         }
     }
+}
+/*** HOME ***/ 
+
+#home{
+    background-image:linear-gradient(rgba(236, 208, 72,.5),rgba(236, 208, 72,.5)),
+        url(img/home-background.png);
+   @include bgImg;
 }

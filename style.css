@@ -3,6 +3,7 @@
 /* rgb(12, 153, 104)*/
 /* rgb(105, 184, 213)*/
 /*** mixins ***/
+/*** basic styles ***/
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +33,21 @@ a {
 }
 a:hover {
   transition: 0.4s ease;
+}
+
+.sing-up {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0d9968;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+.sing-up a {
+  color: #000;
 }
 
 /*** nav ***/
@@ -66,6 +82,15 @@ nav ul a {
 nav ul a:hover {
   background: transparent;
   color: #383838;
+}
+
+/*** HOME ***/
+#home {
+  background-image: linear-gradient(rgba(236, 208, 72, 0.5), rgba(236, 208, 72, 0.5)), url(img/home-background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /*# sourceMappingURL=style.css.map */
