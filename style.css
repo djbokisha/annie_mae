@@ -1,5 +1,71 @@
+/*** variables ***/
 /* rgb(236, 208, 72)*/
 /* rgb(12, 153, 104)*/
 /* rgb(105, 184, 213)*/
+/*** mixins ***/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*** styles ***/
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #0d9968;
+  padding: 10px 0 30px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Arizonia", sans-serif;
+  color: #383838;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  transition: 0.4s ease;
+}
+
+/*** nav ***/
+nav {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+nav .logo {
+  font-family: "Arizonia", sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  background: #383838;
+  padding: 10px 15px;
+  border-radius: 10px 35px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul li {
+  list-style: none;
+  margin-left: 50px;
+}
+nav ul a {
+  font-size: 1.2rem;
+  color: #383838;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+nav ul a:hover {
+  background: transparent;
+  color: #383838;
+}
 
 /*# sourceMappingURL=style.css.map */

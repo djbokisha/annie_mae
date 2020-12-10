@@ -1,3 +1,4 @@
+/*** variables ***/ 
 $yellow: #ecd048;
 /* rgb(236, 208, 72)*/
 $green: #0d9968;
@@ -9,9 +10,74 @@ $white: #fff;
 $black: #000;
 $bodyFont: 'Lato',
 sans-serif;
-$accentsFont: 'Arizonia',
-sans-serif;
+$accentsFont: 'Arizonia',sans-serif;
+$fontSize: 16px;
+$transition: .4s ease;
 
-body{
-    
+/*** mixins ***/ 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*** styles ***/ 
+
+body {
+    font-family: $bodyFont;
+    font-size: $fontSize;
+    color: $green;
+    padding: 10px 0 30px 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $accentsFont;
+    color: $gray;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+a {
+    text-decoration: none;
+    &:hover{
+        transition: $transition;
+
+    }
+}
+
+/*** nav ***/ 
+
+nav{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    .logo{
+        font-family: $accentsFont;
+        font-size: 3rem;
+        color: $white;
+        background: $gray;
+        padding: 10px 15px;
+        border-radius: 10px 35px;
+ 
+    }
+    ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        li{
+            list-style: none;
+            margin-left: 50px ;
+        }
+        a{
+            font-size: 1.2rem;
+            color: $gray;
+            font-weight: 900;
+            text-transform: uppercase;
+            &:hover{
+                background: transparent;
+                color: $gray;
+            }
+
+        }
+    }
 }
