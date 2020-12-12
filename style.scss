@@ -26,6 +26,19 @@ $transition: .4s ease;
     justify-content: center;
     flex-direction: column;
 }
+@mixin form {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px 40px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: $gray;
+    opacity: .6;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    
+}
 /*** basic styles ***/ 
 
 * {
@@ -33,7 +46,7 @@ $transition: .4s ease;
     padding: 0;
     box-sizing: border-box;
 }
-/*** styles ***/ 
+/*** basic styles ***/ 
 
 body {
     font-family: $bodyFont;
@@ -75,6 +88,9 @@ a {
     font-size: 5rem;
     margin-bottom: 15px;
     font-weight: bold;
+    @media(max-width: 768px){
+        font-size: 3rem;
+    }
 }
 .underline{
     background: $gray;
@@ -191,21 +207,36 @@ nav{
     .about-page{
         padding-top: 100px;
         padding-bottom: 50px;
+        @media(max-width: 768px){
+            padding-top: 50px;
+        }
         p{
             font-size: 1.4rem;
             text-align: justify;
             .img-left{
                 float: left;
                 width: 30%;
+                @media(max-width: 768px){
+                    padding-top: 50px;
+                    width: 100%;
+                }
                 &:hover {
                     transform: rotate(360deg);
+                    transition-duration: 1s;
+
                 }
             }
             .img-right{
                 float: right;
                 width: 30%;
+                @media(max-width: 768px){
+                    padding-top: 50px;
+                    width: 100%;
+                }
                 &:hover {
                     transform: rotate(-360deg);
+                    transition-duration: 1s;
+
                 }
             }
         }
@@ -213,3 +244,60 @@ nav{
     }
 }
 
+
+/*** CONTACT ***/ 
+
+#contact {
+    background-image:linear-gradient(rgba(105, 184,213,.5),rgba(105, 184,213,.5)),
+        url(img/contact-pozadina.png);
+        @include bgImg;
+        .contact {
+            display:flex;
+            padding-top: 150px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .contact-text{
+                font-size: 1.5rem;
+                flex: 0 0 48%;
+                @media(max-width: 768px){
+                    flex: 0 0 100%
+                    
+                }
+                .copy{
+                    padding-bottom: 150px;
+                    @media(max-width: 768px){
+                    padding-bottom: 50px;                        
+                    }
+
+                }
+            }
+        
+            .forma{
+                flex: 0 0 48%;
+                @media(max-width: 768px){
+                padding-top: 50px;                }
+                form{
+                    input{
+                       @include form;
+
+                    }
+                    textarea{
+                       @include form;
+                    }
+                    input[type="submit"]{
+                        background: $gray;
+                        width: 300px;
+                        color: $white;
+                        cursor: pointer;
+                        margin-top:20px;
+                        opacity: 1;
+                        &:hover{
+                            background: $black;
+                            transition: $transition;
+                        }
+                    }
+                }
+            }
+        }
+
+}
